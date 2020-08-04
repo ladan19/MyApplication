@@ -1,31 +1,12 @@
-var express = require('express');
-var msg = require('./mod_teste');
+var app = require('./Config/server')
 
-var app = express();
-
-app.set('view engine', 'ejs');
-
-
-app.get('/', function(req, resp){
-    
-    resp.render("home/index");
-
-});
-
-app.get('/formulario_inclusao_noticias', function(req, resp){
-
-    resp.render("admin/form_add_noticia")
-
-});
+//Sem o consign vamos apontar as rotas da nossa APP
+//var rotaNoticias = require('./app/routes/noticias')(app);
+//var rotaHome = require('./app/routes/home')(app);
+//var rotaInclusaoNoticias = require('./app/routes/formulario_inclusao_noticia')(app);
 
 
-app.get('/noticias', function(req, resp){
-
-    resp.render("noticias/noticias")
-
-});
 
 app.listen(3000, function(){
-    console.log("Servidor rodando com express");
-    console.log(msg());
+    console.log("Servidor On");
 });
